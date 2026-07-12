@@ -18,7 +18,7 @@ class Event(models.Model):
     @property
     def seats(self):
         total = self.total_seats
-        taken = self.booking.all().count()
+        taken = self.bookings.all().count()
         return total - taken
     
     def __str__(self):

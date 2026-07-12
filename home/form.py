@@ -66,9 +66,5 @@ class EventForm(forms.ModelForm):
             self.add_error("dnt", "Event date and time must be in the future.")
             return False
         
-        seat = self.cleaned_data.get("total_seats")
-        if seat<1:
-            self.add_error("total seats","zero and negative number not allowed")
-            return False
-
+        
         return True
